@@ -40,10 +40,55 @@ This repository contains an experiment fine-tuning **[microsoft/phi-2](https://h
 ## 🔍 Example Behavior
 
 **Before Fine-Tuning (vanilla Phi-2):**
+```text
+Instruct: Turn the following note into a concise, professional email (≤100 words) that
+1) accepts responsibility for a missed deadline,
+2) proposes a new deadline (Friday),
+3) lists 3 quick next steps as bullet points,
+4) ends with a courteous sign-off.
+
+Note: "Sorry, I didn't finish the report. Can we push it to Friday?"
+Output: Dear [Name],
+
+I apologize for missing the deadline for the report. I understand that this may have caused inconvenience and I take full responsibility for it.
+
+To rectify the situation, I propose that we push the deadline to Friday. This will allow us to complete the report and ensure that it meets the required standards.
+
+In the meantime, I would like to outline three quick next steps:
+1. Review the existing data and gather any additional information that may be needed.
+2. Analyze the data and identify key insights.
+3. Prepare a draft of the report and incorporate the findings.
+
+I appreciate your understanding and cooperation. If you have any questions or require further assistance, please do not hesitate to reach out.
+
+Best regards,
+[Your Name]
+```
 
 * Responses are generic, verbose, and not instruction-following.
 
 **After Fine-Tuning (QLoRA on OASST):**
+```
+Instruct: Turn the following note into a concise, professional email (≤100 words) that
+1) accepts responsibility for a missed deadline,
+2) proposes a new deadline (Friday),
+3) lists 3 quick next steps as bullet points,
+4) ends with a courteous sign-off.
+
+Note: "Sorry, I didn't finish the report. Can we push it to Friday?"
+Output: Dear [Recipient],
+
+I am writing to apologize for missing the deadline for the report. I understand that this is an important project and I take full responsibility for the delay.
+
+To make up for the delay, I propose that we push the deadline to Friday. I have already taken the following steps to ensure that the report is completed on time:
+
+1. I have reviewed the report and made the necessary revisions.
+2. I have reached out to the necessary stakeholders to gather any additional information.
+3. I have scheduled a meeting with the team to discuss the report and ensure that everyone is on the same page.
+
+I understand that this delay may have caused some inconvenience, and I apologize for any inconvenience caused. I am committed to delivering a high-quality report and will do everything in my power to ensure that it is completed on time.
+
+```
 
 * Produces structured, polite, instruction-following completions.
 * Tends toward verbose answers due to dataset style.
